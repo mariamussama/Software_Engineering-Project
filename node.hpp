@@ -23,7 +23,7 @@ class Node{
     //default constructor
     Node();
     // parametarized consructor
-    Node(string paper_title, int num_auth, vector<string> auth_names, int num_references, vector<string> ref_titles, int year, string journal_name, string paper_doi);
+    Node(string paper_title, int num_auth, vector<string> auth_names, int num_references, vector<string> ref_titles, int year, string journal, string paper_doi);
 
     // getters
     string get_title();
@@ -42,12 +42,12 @@ class Node{
     void set_num_references(int num_references);
     void set_reference_titles(vector<string> ref_titles);
     void set_publish_year(int year);
-    void set_journal_name(string journal_name);
+    void set_journal_name(string journal);
     void set_paper_doi(string paper_doi);
 
     // debugging 
     void print(); // prints details of node
-
+    bool is_empty();
     // destructor
     ~Node();
 };
