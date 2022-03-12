@@ -1,5 +1,5 @@
 #ifndef NODE_H
-#define NODE_h
+#define NODE_H
 #include <iostream>
 #include <string>
 #include <vector>
@@ -13,8 +13,6 @@ class Node{
     string title; // title of paper
     int n_authors; // number of authors 
     vector<string> authors; // list of author last names
-    int n_citations; // number of citations paper received
-    vector<string> citation_titles; // titles of papers that cited this paper
     int n_references; // number of references used in this paper
     vector<string> references_titles; // titles of papers referenced
     int year_published; // year paper was published
@@ -25,14 +23,12 @@ class Node{
     //default constructor
     Node();
     // parametarized consructor
-    Node(string paper_title, int num_auth, vector<string> auth_names, int num_citations, vector<string> cit_titles, int num_references, vector<string> ref_titles, int year, string journal_name, string paper_doi);
+    Node(string paper_title, int num_auth, vector<string> auth_names, int num_references, vector<string> ref_titles, int year, string journal_name, string paper_doi);
 
     // getters
     string get_title();
     int get_num_authors();
     vector<string> get_author_names();
-    int get_num_citations();
-    vector<string> get_citation_titles();
     int get_num_references();
     vector<string> get_reference_titles();
     int get_publish_year();
@@ -43,8 +39,6 @@ class Node{
     void set_title(string paper_title);
     void set_num_authors(int num_auth);
     void set_author_names(vector<string> auth_names);
-    void set_num_citations(int num_citations);
-    void set_citation_titles(vector<string> cit_titles);
     void set_num_references(int num_references);
     void set_reference_titles(vector<string> ref_titles);
     void set_publish_year(int year);

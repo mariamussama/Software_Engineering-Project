@@ -1,12 +1,8 @@
 #include "node.hpp"
 using namespace std;
 
-Node::Node()
-{
 
-}
-
-Node::Node(string paper_title, int num_auth, vector<string> auth_names, int num_citations, vector<string> cit_titles, int num_references, vector<string> ref_titles, int year, string journal_name, string paper_doi)
+Node::Node(string paper_title, int num_auth, vector<string> auth_names,int num_references, vector<string> ref_titles, int year, string journal_name, string paper_doi)
 {
 
 }
@@ -23,16 +19,6 @@ int Node::get_num_authors()
 }
 
 vector<string> Node::get_author_names()
-{
-
-}
-
-int Node::get_num_citations()
-{
-
-}
-
-vector<string> Node::get_citation_titles()
 {
 
 }
@@ -78,15 +64,6 @@ void Node::set_author_names(vector<string> auth_names)
 
 }
 
-void Node::set_num_citations(int num_citations)
-{
-
-}
-
-void Node::set_citation_titles(vector<string> cit_titles)
-{
-
-}
 
 void Node::set_num_references(int num_references)
 {
@@ -120,11 +97,3 @@ void Node::print() // prints details of node
 } 
 
 // destructor
-Node::~Node()
-{
-
-}
-
-int main(){
-    return 0;
-}
