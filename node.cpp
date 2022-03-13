@@ -1,25 +1,25 @@
-#include "node.hpp"
+#include "Node.h"
 using namespace std;
 
 Node::Node()
-{ 
-    title = ""; 
-    n_authors = -1; 
-    n_references = -1; 
-    year_published = -1; 
-    journal_name = ""; 
-    doi = "";  
+{
+    title = "";
+    n_authors = -1;
+    n_references = -1;
+    year_published = -1;
+    journal_name = "";
+    doi = "";
 }
 
-Node::Node(string paper_title, int num_auth, vector<string> auth_names,int num_references, vector<string> ref_titles, int year, string journal, string paper_doi)
+Node::Node(string paper_title, int num_auth, vector<string> auth_names, int num_references, vector<string> ref_titles, int year, string journal, string paper_doi)
 {
-    title = paper_title; 
-    n_authors = num_auth; 
+    title = paper_title;
+    n_authors = num_auth;
     authors = auth_names;
-    n_references = num_references; 
+    n_references = num_references;
     references_titles = ref_titles;
-    year_published = year; 
-    journal_name = journal; 
+    year_published = year;
+    journal_name = journal;
     doi = paper_doi;
 }
 
@@ -107,29 +107,32 @@ void Node::set_paper_doi(string paper_doi)
 }
 
 // debugging 
-bool Node::is_empty(){
+bool Node::is_empty() {
     return n_authors == -1 ? true : false;
 }
 void Node::print() // prints details of node
 {
-    if(!is_empty()){
-        cout << "Paper title: " << title <<"\n";
+   if (!is_empty()) 
+   {
+        cout << "Paper title: " << title << "\n";
         cout << "Authors: ";
-        for (int i; i < n_authors; i++){
-            if ( i < n_authors-1) cout << authors[i] << ", ";
-            else cout << authors[i] <<"\n";
+        for (int i=0; i < n_authors; i++) {
+            if (i < n_authors - 1) cout << authors[i] << ", ";
+            else cout << authors[i] ;
         }
-        cout << "References: ";
-        for (int i; i < n_references; i++){
-            cout << i+1 << ". " << references_titles[i] << "\n"; 
+        cout << "\n" << "References: " << "\n";
+        for (int i=0; i < n_references; i++) {
+            cout << i + 1 << ". " << references_titles[i] << "\n";
         }
-        cout << "Year Published: " << year_published <<"\n";
+        cout << "Year Published: " << year_published << "\n";
         cout << "Journal name: " << journal_name << "\n";
         cout << "Doi: " << doi << "\n";
-    } else{
+    }
+    else 
+    {
         cout << "No data in this node" << endl;
     }
-} 
+}
 
 // destructor
 Node::~Node()
