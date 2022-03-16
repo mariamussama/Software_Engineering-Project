@@ -6,10 +6,6 @@
 #include "Node.h"
 using namespace std;
 
-struct Edge {
-    Node src, dst;
-};
-
 class Database {
 private:
     int size;
@@ -18,7 +14,9 @@ private:
 public:
     Database();
     bool is_empty(ifstream&);
+    int get_size();
     void insert(string key, Node value);
+    vector<string> get_titles();
     void print();
     vector<Edge> get_edges(string key);
     ~Database();

@@ -45,20 +45,36 @@ bool Database::is_empty(ifstream& inFile)
 	return inFile.peek() == std::ifstream::traits_type::eof(); 
 }
 void Database::print()
-{
-	for (auto x : data)
+{	
+	int i = 1;
+	for (auto paper : data)
 	{
-		Node n;
-		cout << x.first << " ";
-		n = x.second;
-		n.print(); cout << endl;
+		// Node n;
+		cout << i << ". " << paper.first << " \n";
+		i++;
+		// n = x.second;
+		// n.print(); cout << endl;
 	}
 }
 void Database::insert(string key, Node value) {}
 vector<Edge> Database::get_edges(string key) 
 {
-	vector<Edge> a;
-	return a;
+	vector<Edge> edges;
+	for (auto dst: data[key].get_reference_titles()){
+		Edge edge = {data[key], data[dst]};
+		edges.push_back(edge);
+	}
+	return edges;
+}
+int Database::get_size(){
+	return data.size();
+}
+vector<string> Database::get_titles(){
+	vector<string> titles;
+	for(auto title: data){
+		titles.push_back(title.first);
+	}
+	return titles;
 }
 Database::~Database() {
 }
