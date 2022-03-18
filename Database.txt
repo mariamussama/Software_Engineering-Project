@@ -1,6 +1,6 @@
-Scholar1 3 MAR AHM MON 4 A.COM B.COM C.COM D.COM 2000 Times 700.AA
-Scholar2 4 MAR AHM MON KAR 4 E.COM F.COM G.COM H.COM 2001 Times2 701.BB
+Scholar1 3 MAR AHM MON 4 Scholar3 Scholar2 Scholar2 Scholar3 2000 Times 700.AA
+Scholar2 4 MAR AHM MON KAR 4 Scholar2 Scholar1 Scholar5 Scholar4 2001 Times2 701.BB
 Scholar3 1 MAR 0 2002 Times 702.CC
-Scholar4 2 MAR AHM 1 A.COM 2003 Times2 703.DD
-Scholar5 0 4 H.COM B.COM C.COM A.COM 2004 Times3 704.EE
-Scholar6 2 MAR AHM 3 H.COM B.COM C.COM 2005 Times4 705.FF
+Scholar4 2 MAR AHM 1 Scholar1 2003 Times2 703.DD
+Scholar5 0 4 Scholar4 Scholar2 Scholar3 Scholar6 2004 Times3 704.EE
+Scholar6 2 MAR AHM 3 Scholar5 Scholar2 Scholar1 2005 Times4 705.FF

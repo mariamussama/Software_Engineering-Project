@@ -8,11 +8,11 @@
 using namespace std;
 
 
-class Graph{
-    private:
+class Graph {
+private:
     int V; // size of graph
     unordered_map <string, vector<Node>> adjacency_list; // adj list for graph
-    public:
+public:
     Graph(int N, vector<Edge> edges);
     void print_graph();
     ~Graph();

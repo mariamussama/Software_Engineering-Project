@@ -3,7 +3,7 @@
 #include <fstream>
 using namespace std;
 
-Database::Database() 
+Database::Database()
 {
 	ifstream read("Database.txt");
 	if (!read.is_open()) { cout << "File not open"; exit(1); }
@@ -11,9 +11,9 @@ Database::Database()
 	{
 		vector<string> ref;
 		vector<string> auth;
-		string node_name,temp, journal, paper_doi;
-		int num_auth,num_ref,year;
-		while (!read.eof()) 
+		string node_name, temp, journal, paper_doi;
+		int num_auth, num_ref, year;
+		while (!read.eof())
 		{
 			read >> node_name;
 			read >> num_auth;
@@ -38,14 +38,14 @@ Database::Database()
 	}
 	else cout << "File is empty";
 	read.close();
-	print();
+	//print();
 }
-bool Database::is_empty(ifstream& inFile) 
-{ 
-	return inFile.peek() == std::ifstream::traits_type::eof(); 
+bool Database::is_empty(ifstream& inFile)
+{
+	return inFile.peek() == std::ifstream::traits_type::eof();
 }
 void Database::print()
-{	
+{
 	int i = 1;
 	for (auto paper : data)
 	{
@@ -57,26 +57,26 @@ void Database::print()
 	}
 }
 void Database::insert(string key, Node value) {}
-vector<Edge> Database::get_edges(string key) 
+vector<Edge> Database::get_edges(string key)
 {
 	vector<Edge> edges;
-	for (auto dst: data[key].get_reference_titles()){
-		Edge edge = {data[key], data[dst]};
+	for (auto dst : data[key].get_reference_titles()) {
+		Edge edge = { data[key], data[dst] };
 		edges.push_back(edge);
 	}
 	return edges;
 }
-int Database::get_size(){
+int Database::get_size() {
 	return data.size();
 }
-vector<string> Database::get_titles(){
+vector<string> Database::get_titles() {
 	vector<string> titles;
-	for(auto title: data){
+	for (auto title : data) {
 		titles.push_back(title.first);
 	}
 	return titles;
 }
-Node Database::get_node(string key){
+Node Database::get_node(string key) {
 	return data[key];
 }
 Database::~Database() {

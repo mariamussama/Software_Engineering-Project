@@ -112,23 +112,23 @@ bool Node::is_empty() {
 }
 void Node::print() // prints details of node
 {
-   if (!is_empty()) 
-   {
+    if (!is_empty())
+    {
         cout << "Paper title: " << title << "\n";
         cout << "Authors: ";
-        for (int i=0; i < n_authors; i++) {
+        for (int i = 0; i < n_authors; i++) {
             if (i < n_authors - 1) cout << authors[i] << ", ";
-            else cout << authors[i] ;
+            else cout << authors[i];
         }
         cout << "\n" << "References: " << "\n";
-        for (int i=0; i < n_references; i++) {
+        for (int i = 0; i < n_references; i++) {
             cout << i + 1 << ". " << references_titles[i] << "\n";
         }
         cout << "Year Published: " << year_published << "\n";
         cout << "Journal name: " << journal_name << "\n";
         cout << "Doi: " << doi << "\n";
     }
-    else 
+    else
     {
         cout << "No data in this node" << endl;
     }
