@@ -17,9 +17,11 @@ public:
     int get_size();
     void insert(string key, Node value);
     vector<string> get_titles();
+    Node get_node(string key);
     void print();
     vector<Edge> get_edges(string key);
     ~Database();
 };
+
 
 #endif

@@ -76,5 +76,8 @@ vector<string> Database::get_titles(){
 	}
 	return titles;
 }
+Node Database::get_node(string key){
+	return data[key];
+}
 Database::~Database() {
 }
