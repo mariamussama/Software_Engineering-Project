@@ -53,4 +53,10 @@ public:
     ~Node();
 };
 
+struct Edge {
+    Node src, dst;
+};
+
+
+
 #endif
